@@ -41,10 +41,10 @@ class DFAoC2021Python:
         self.arguments()
         selection = f"day{self.args.day}{self.args.challenge}"
         try:
-            print(f"Attempting to run ./lib/{selection}.py")
-            os.system(f"python3 ./lib/{selection}.py")
+            print(f"Attempting to run ./src/{selection}.py")
+            os.system(f"python3 ./src/{selection}.py")
         except Exception as e:
-            print(f"Unable to run ./lib/{selection}.py: {e}")
+            print(f"Unable to run ./src/{selection}.py: {e}")
             raise e
 
 
