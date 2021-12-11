@@ -1,0 +1,1 @@
+This directory is intended to store source code for the daily challenges.
