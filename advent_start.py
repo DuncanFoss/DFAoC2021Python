@@ -18,7 +18,7 @@ class DFAoC2021Python:
     --day and --challenge arguments both required
 
     --day can be any value from 1-25 (for the days in AoC2021)
-    --challenge should be either 'a' or 'b' to represent the first and second challenges
+    --challenge should be either 'a' or 'b' to represent the first or second challenges
 
     When arguments are properly supplied script will assemble the name of the desired
     script to run.
@@ -29,7 +29,7 @@ class DFAoC2021Python:
         parser = ArgumentParser(description="Arugment parser for AoC2021")
 
         parser.add_argument(
-            "-d", "--day", dest="day", required=True, type=int, choices=range(1, 25)
+            "-d", "--day", dest="day", required=True, type=int, choices=range(1, 26)
         )
         parser.add_argument(
             "-c", "--challenge", dest="challenge", required=True, choices=("a", "b")
@@ -45,8 +45,10 @@ class DFAoC2021Python:
             os.system(f"python3 ./src/{selection}.py")
         except Exception as e:
             print(f"Unable to run ./src/{selection}.py: {e}")
-            raise e
-
+            return 1
+        except Exception as e:
+            print(f"Unable to run ./src/{selection}.py: {e}")
+            return 0
 
 if __name__ == "__main__":
     script = DFAoC2021Python()
