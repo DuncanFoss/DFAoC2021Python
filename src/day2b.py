@@ -27,7 +27,7 @@ class day2b:
                 raise KeyError("Improper submarine movement. All hands lost.")
 
         print(
-            f"Product of final x ({bearing[0]}) & y ({bearing[1]}) coordinates:"
+            f"Product of final x ({bearing[0]}) & y ({bearing[1]}) coordinates: "
             + f"{bearing[0]*bearing[1]}"
         )
 
