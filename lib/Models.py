@@ -1,20 +1,20 @@
 import copy
 
 
-class BingoBoard:
+class BingoBoard: # First used in day 4 challenge a
     """
     Kind of hacky solution, will probably come back to clean it up at some point
     Vertical and horizontal line checks have repetitive code, should be easy to cleanup.
     """
 
-    board: list[list[str]] = []
-    blotted_board: list[list[str]] = []
-    winning_state: list[list[str]] = None
+    board: 'list[list[str]]' = []
+    blotted_board: 'list[list[str]]' = []
+    winning_state: 'list[list[str]]' = None
     last_call: int = None
     unblotted_sum: int = 0
     winner = False
 
-    def __init__(self, board_id: int, values: list[list]):
+    def __init__(self, board_id: int, values: 'list[list]'):
         self.board = copy.deepcopy(values)
         self.blotted_board = copy.deepcopy(values)
         self.board_id = board_id
