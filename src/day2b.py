@@ -9,7 +9,7 @@ class day2b:
         bearing[1] = y coord
         bearing[2] = aim
         """
-        source = Utility.file_reader(Utility.derive_basename(__file__))
+        source = Utility.data_reader(Utility.derive_basename(__file__))
         bearing = [0, 0, 0]
 
         for line in source:

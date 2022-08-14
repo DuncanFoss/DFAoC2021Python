@@ -1,10 +1,10 @@
 from lib.Models import BingoBoard
-from lib.Utility import file_reader, derive_basename
+from lib.Utility import data_reader, derive_basename
 
 
 class day4a:
     def run():
-        source = file_reader(derive_basename(__file__))
+        source = data_reader(derive_basename(__file__))
         callouts = source.pop(0).split(",")
         board_list: list[BingoBoard] = []
         winner_stack: list[int] = []

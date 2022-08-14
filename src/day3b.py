@@ -37,7 +37,7 @@ class day3b:
         # end of sort_list
 
         source: dict[str, list] = {
-            "original": Utility.file_reader(Utility.derive_basename(__file__)),
+            "original": Utility.data_reader(Utility.derive_basename(__file__)),
             "presort": [],
             "postsort": [],
         }

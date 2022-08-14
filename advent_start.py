@@ -26,7 +26,7 @@ class DFAoC2021Python:
     """
 
     def arguments(self) -> ArgumentParser:
-        parser = ArgumentParser(description="Arugment parser for AoC2021")
+        parser = ArgumentParser(description="Argument parser for AoC2021")
 
         parser.add_argument(
             "-d", "--day", dest="day", required=True, type=int, choices=range(1, 26)

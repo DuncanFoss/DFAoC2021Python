@@ -3,7 +3,7 @@ from lib import Utility
 
 class day1a:
     def run():
-        source = Utility.file_reader(Utility.derive_basename(__file__))
+        source = Utility.data_reader(Utility.derive_basename(__file__))
         holder = None
         count = 0
 

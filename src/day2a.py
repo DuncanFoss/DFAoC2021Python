@@ -3,7 +3,7 @@ from lib import Utility
 
 class day2a:
     def run():
-        source = Utility.file_reader(Utility.derive_basename(__file__))
+        source = Utility.data_reader(Utility.derive_basename(__file__))
         coord = [0, 0]
 
         for line in source:

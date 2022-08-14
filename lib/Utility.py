@@ -2,13 +2,13 @@ import os
 from typing import Union
 
 
-def file_reader(
+def data_reader(
     name: str, ext: str = ".txt", source: str = "./docs/data/", filetype: str = None
 ) -> 'list[str]':
     """
     Reads a file and returns the content as a list of strings without extra new lines
     """
-    return open(f"{source}{name}{ext}", "r", newline="").read().splitlines()
+    return open(f"{source}{name[:-1]}{ext}", "r", newline="").read().splitlines()
 
 
 def derive_basename(full_path: str) -> str:
