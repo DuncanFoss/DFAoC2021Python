@@ -2,7 +2,7 @@ from lib.Models import BingoBoard
 from lib.Utility import data_reader, derive_basename
 
 
-class day4a:
+class day4b:
     def run():
         source = data_reader(derive_basename(__file__))
         callouts = source.pop(0).split(",")

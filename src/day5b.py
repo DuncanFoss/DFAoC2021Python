@@ -2,7 +2,7 @@ from lib.Utility import data_reader, derive_basename
 import re
 
 
-class day5a:
+class day5b:
 
     def run():
         h_lines = []
