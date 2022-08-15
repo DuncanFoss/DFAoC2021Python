@@ -59,50 +59,8 @@ class DFAoC2021Python:
                 day_script = day1.Day1(data, self.args.challenge)
             elif self.args.day == 2:
                 day_script = day2.Day2(data, self.args.challenge)
-        #     elif selection == 'day3':
-        #         day_script = day3a() if self.args.challenge == 'a' else day3b()
-        #     elif selection == 'day4':
-        #         day_script = day4a() if self.args.challenge == 'a' else day4b()
-        #     elif selection == 'day5':
-        #         day_script = day5a() if self.args.challenge == 'a' else day5b()
-        #     elif selection == 'day6':
-        #         day_script = day6a() if self.args.challenge == 'a' else day6b()
-        #     elif selection == 'day7':
-        #         day_script = day7a() if self.args.challenge == 'a' else day7b()
-        #     elif selection == 'day8':
-        #         day_script = day8a() if self.args.challenge == 'a' else day8b()
-        #     elif selection == 'day9':
-        #         day_script = day9a() if self.args.challenge == 'a' else day9b()
-        #     elif selection == 'day10':
-        #         day_script = day10()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
-        #     elif selection == 'day1a':
-        #         day_script = day1a()
+            elif self.args.day == 3:
+                day_script = day3.Day3(data, self.args.challenge)
 
             day_script.run()
         except:
