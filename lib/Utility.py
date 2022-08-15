@@ -5,6 +5,7 @@ from typing import Union
 def data_reader(
     name: str, ext: str = ".txt", source: str = "./docs/data/", filetype: str = None
 ) -> 'list[str]':
+    # not needed anymore
     """
     Reads a file and returns the content as a list of strings without extra new lines
     """
