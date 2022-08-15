@@ -7,13 +7,9 @@ Licence: Use this code however you choose. If you copy it please provide credit.
 Cheers!
 """
 
-from src import *
-from lib import Utility, Models
-import os
 import sys
-
 from argparse import ArgumentParser
-
+from src import *
 
 class DFAoC2021Python:
     """
@@ -27,7 +23,11 @@ class DFAoC2021Python:
     eg) $python3 -d 1 -c a  -  will attempt to run a script named day1a.py from ./src/
     """
 
+    def __init__(self):
+        self.args = None
+
     def arguments(self) -> ArgumentParser:
+        """Sets up arguments used to determine execution behaviour"""
         parser = ArgumentParser(description="Argument parser for AoC2021")
 
         parser.add_argument(
@@ -40,6 +40,7 @@ class DFAoC2021Python:
         self.args = parser.parse_args()
 
     def run(self):
+        """Run routine for script"""
         self.arguments()
         selection = f"day{self.args.day}{self.args.challenge}"
         file = f"./docs/data/day{self.args.day}.txt"
@@ -47,17 +48,17 @@ class DFAoC2021Python:
         print(f"Attempting to read data from '{file}'...")
         try:
             data = open(file, "r", newline="").read().splitlines()
-        except:
+        except FileNotFoundError:
             print(f"Unable to read '{file}'.\nDoes it exist and is it named correctly?")
             return 1
 
-        print(f"Attempting to run code for day '{self.args.day}' challenge '{self.args.challenge}'...")
+        print(f"Executing day '{self.args.day}' challenge '{self.args.challenge}'...")
 
         try:
             if self.args.day == 1:
                 day_script = day1.Day1(data, self.args.challenge)
-        #     elif selection == 'day2':
-        #         day_script = day2a() if self.args.challenge == 'a' else day2b()
+            elif self.args.day == 2:
+                day_script = day2.Day2(data, self.args.challenge)
         #     elif selection == 'day3':
         #         day_script = day3a() if self.args.challenge == 'a' else day3b()
         #     elif selection == 'day4':
@@ -102,13 +103,14 @@ class DFAoC2021Python:
         #         day_script = day1a()
         #     elif selection == 'day1a':
         #         day_script = day1a()
-            
+
             day_script.run()
-        except Exception as e:
-            print(f"Unable to run {selection}.py - Does the file exist?")
-            print(e)
+        except:
+            print(f"Unable to run {selection}.py")
+            raise
+        return 0
 
 if __name__ == "__main__":
-    script = DFAoC2021Python()
-    return_code = script.run()
-    sys.exit(return_code)
+    SCRIPT = DFAoC2021Python()
+    RETURN_CODE = SCRIPT.run()
+    sys.exit(RETURN_CODE)
