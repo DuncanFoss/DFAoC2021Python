@@ -11,6 +11,7 @@ from lib.models import BingoBoard
 
 class Day4:
     """Contains logic for day 4 challenges"""
+
     def __init__(self, data, challenge):
         self.data = data
         self.challenge = challenge

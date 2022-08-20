@@ -63,6 +63,8 @@ class DFAoC2021Python:
                 day_script = day3.Day3(data, self.args.challenge)
             elif self.args.day == 4:
                 day_script = day4.Day4(data, self.args.challenge)
+            elif self.args.day == 5:
+                day_script = day5.Day5(data, self.args.challenge)
 
             day_script.run()
         except:
