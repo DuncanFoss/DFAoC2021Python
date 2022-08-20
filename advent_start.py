@@ -31,7 +31,7 @@ class DFAoC2021Python:
         parser = ArgumentParser(description="Argument parser for AoC2021")
 
         parser.add_argument(
-            "-d", "--day", dest="day", required=True, type=int, choices=range(1, 26)
+            "-d", "--day", dest="day", required=True, type=int, choices=range(1, 25)
         )
         parser.add_argument(
             "-c", "--challenge", dest="challenge", required=True, choices=("a", "b")
@@ -61,6 +61,8 @@ class DFAoC2021Python:
                 day_script = day2.Day2(data, self.args.challenge)
             elif self.args.day == 3:
                 day_script = day3.Day3(data, self.args.challenge)
+            elif self.args.day == 4:
+                day_script = day4.Day4(data, self.args.challenge)
 
             day_script.run()
         except:
