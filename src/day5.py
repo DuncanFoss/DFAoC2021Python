@@ -121,8 +121,8 @@ class Day5:
         if self.challenge == 'b':
             self.process_diagonal()
 
-        print("Final count of grid locations with at least 2 overlaps with horizontal " +
-              f"and vertical vents: {self.count_excessive_intersections()}")
+        print(f"Day 5 challenge {self.challenge.upper()} result: " +
+              f"{self.count_excessive_intersections()}")
 
 if __name__ == "__main__":
     DATA = ["0,9 -> 5,9",

@@ -1,36 +1,58 @@
-from lib.Utility import data_reader, derive_basename
+"""
+Author: Duncan Foss
+Project: Advent of Code 2021
 
-class day6a:
-    def run():
-        ITERATION_LIMIT = 256
-        iteration_count = 0
-        fish_population = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0}
-        new_fish = 0
-        # state = [3,4,3,1,2]
-        state = data_reader(derive_basename(__file__))[0].split(',')
+Licence: Use this code however you choose. If you copy it please provide credit.
 
-        for s in state:
-            fish_population[int(s)] = fish_population[int(s)] + 1
+Cheers!
+"""
 
+class Day6:
+    """Contains logic for day 6 challenges"""
 
-        while iteration_count < ITERATION_LIMIT:
-            new_fish = fish_population[0]
-            roll_over = fish_population[0]
-            fish_population[0] = fish_population[1]
-            fish_population[1] = fish_population[2]
-            fish_population[2] = fish_population[3]
-            fish_population[3] = fish_population[4]
-            fish_population[4] = fish_population[5]
-            fish_population[5] = fish_population[6]
-            fish_population[6] = fish_population[7] + roll_over
-            fish_population[7] = fish_population[8]
-            fish_population[8] = new_fish
-            iteration_count = iteration_count + 1
+    def __init__(self, data, challenge):
+        self.data = data[0].split(',')
+        self.challenge = challenge
 
-            new_fish = 0
+        self.iteration_limit = 80 if challenge == 'a' else 256
+        self.iteration_count = 0
+        self.fish_population = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0}
+        self.new_fish = 0
 
-        print(f"Fish after {iteration_count} days:{sum(fish_population.values())}")
+    def advance_states(self):
+        """Advances the states by one iteration"""
+        while self.iteration_count < self.iteration_limit:
+            self.new_fish = self.fish_population[0]
+            roll_over = self.fish_population[0]
+            self.fish_population[0] = self.fish_population[1]
+            self.fish_population[1] = self.fish_population[2]
+            self.fish_population[2] = self.fish_population[3]
+            self.fish_population[3] = self.fish_population[4]
+            self.fish_population[4] = self.fish_population[5]
+            self.fish_population[5] = self.fish_population[6]
+            self.fish_population[6] = self.fish_population[7] + roll_over
+            self.fish_population[7] = self.fish_population[8]
+            self.fish_population[8] = self.new_fish
+            self.iteration_count = self.iteration_count + 1
+
+            self.new_fish = 0
+
+    def run(self):
+        """Run routine for script"""
+        for state in self.data:
+            self.fish_population[int(state)] = self.fish_population[int(state)] + 1
+
+        self.advance_states()
+
+        print(f"Day 6 challenge {self.challenge.upper()} result: " +
+              f"{sum(self.fish_population.values())}")
 
 
 if __name__ == "__main__":
-    day6a.run()
+    DATA = ["3,4,3,1,2"]
+
+    SCRIPT = Day6(DATA, 'a')
+    SCRIPT.run()
+
+    SCRIPT = Day6(DATA, 'b')
+    SCRIPT.run()
