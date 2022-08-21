@@ -69,7 +69,8 @@ class DFAoC2021Python:
                 day_script = day6.Day6(data, self.args.challenge)
             elif self.args.day == 7:
                 day_script = day7.Day7(data, self.args.challenge)
-
+            elif self.args.day == 8:
+                day_script = day8.Day8(data, self.args.challenge)
             day_script.run()
         except:
             print(f"Unable to run {selection}.py")
